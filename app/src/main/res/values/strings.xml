@@ -59,4 +59,5 @@
     <string name="audio">Audio</string>
     <string name="location">Location</string>
     <string name="contact">Contact</string>
+    <string name="type_a_message">Type a message</string>
 </resources>

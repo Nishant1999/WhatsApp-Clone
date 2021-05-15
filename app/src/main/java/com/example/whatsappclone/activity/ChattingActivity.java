@@ -73,7 +73,15 @@ public class ChattingActivity extends AppCompatActivity {
         Log.d("ReceiverId",receiverID);
         if(receiverID!=null){
             userNameTXT.setText(userName);
-            Glide.with(this).load(userProfile).into(userProfileCIV);
+            if(userProfile!=null){
+                if(userProfile.equals("")) {
+                    userProfileCIV.setImageResource(R.drawable.icon_male_profile);
+                }
+                else {
+                    Glide.with(this).load(userProfile).into(userProfileCIV);
+                }
+            }
+
         }
 
         backBtnIV.setOnClickListener(new View.OnClickListener() {

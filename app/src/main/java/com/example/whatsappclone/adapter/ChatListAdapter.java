@@ -49,7 +49,12 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
 
         holder.descriptionTXT.setText(chats.getDescription());
 
-        Glide.with(context).load(chats.getUrlProfile()).into(holder.iconProfileIV);
+        if(chats.getUrlProfile().equals("")){
+            holder.iconProfileIV.setImageResource(R.drawable.icon_male_profile);
+        }
+        else {
+            Glide.with(context).load(chats.getUrlProfile()).into(holder.iconProfileIV);
+        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

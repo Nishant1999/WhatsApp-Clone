@@ -49,7 +49,7 @@ public class ChattingActivity extends AppCompatActivity {
     private FloatingActionButton sendFAB;
     private FirebaseUser firebaseUser;
     private DatabaseReference databaseReference;
-    private String receiverID;
+    private String receiverID,userProfile,userName;
     private ChatsItemAdapter chatsItemAdapter;
     private ArrayList<ChatsItem> chatsItemsList;
     private RecyclerView chatItemRV;
@@ -61,9 +61,9 @@ public class ChattingActivity extends AppCompatActivity {
         firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
         databaseReference= FirebaseDatabase.getInstance().getReference();
         Intent intent=getIntent();
-        String userName=intent.getStringExtra("userName");
+        userName=intent.getStringExtra("userName");
         receiverID=intent.getStringExtra("userID");
-        String userProfile=intent.getStringExtra("imageProfile");
+        userProfile=intent.getStringExtra("imageProfile");
 
         userProfileCIV=findViewById(R.id.image_profile);
         userNameTXT=findViewById(R.id.tv_username);
@@ -172,6 +172,16 @@ public class ChattingActivity extends AppCompatActivity {
 
                     textMessageET.setText("");
                 }
+            }
+        });
+
+        userProfileCIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ChattingActivity.this, UserDetailsProfileActivity.class)
+                        .putExtra("userName",userName)
+                        .putExtra("receiverId",receiverID)
+                        .putExtra("imageProfile",userProfile));
             }
         });
 

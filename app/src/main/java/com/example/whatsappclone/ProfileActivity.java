@@ -1,4 +1,4 @@
-package com.example.whatsappclone.activity;
+package com.example.whatsappclone;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,7 +27,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.whatsappclone.R;
 import com.example.whatsappclone.auth.SplashScreen;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

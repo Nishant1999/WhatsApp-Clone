@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.whatsappclone.ProfileActivity;
 import com.example.whatsappclone.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -48,7 +49,7 @@ public class SettingsActivity extends AppCompatActivity {
         profileLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SettingsActivity.this,ProfileActivity.class));
+                startActivity(new Intent(SettingsActivity.this, ProfileActivity.class));
             }
         });
     }

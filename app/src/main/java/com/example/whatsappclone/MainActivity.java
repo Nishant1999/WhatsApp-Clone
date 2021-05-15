@@ -21,6 +21,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.whatsappclone.R;
+import com.example.whatsappclone.activity.ContactActivity;
 import com.example.whatsappclone.activity.SettingsActivity;
 import com.example.whatsappclone.fragment.CallFragment;
 import com.example.whatsappclone.fragment.ChatFragment;
@@ -161,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
                         fabAction.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                //startActivity(new Intent(MainActivity.this,ContactActivity.class));
+                                startActivity(new Intent(MainActivity.this, ContactActivity.class));
                             }
                         });
                         break;

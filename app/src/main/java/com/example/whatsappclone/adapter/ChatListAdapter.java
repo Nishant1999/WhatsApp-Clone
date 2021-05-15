@@ -1,6 +1,7 @@
 package com.example.whatsappclone.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.whatsappclone.R;
+import com.example.whatsappclone.activity.ChattingActivity;
 import com.example.whatsappclone.model.Chat;
 
 
@@ -48,6 +50,16 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
         holder.descriptionTXT.setText(chats.getDescription());
 
         Glide.with(context).load(chats.getUrlProfile()).into(holder.iconProfileIV);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context, ChattingActivity.class)
+                        .putExtra("userID", chats.getUserId())
+                        .putExtra("userName", chats.getUserName())
+                        .putExtra("imageProfile", chats.getUrlProfile()));
+            }
+        });
     }
 
     @Override
